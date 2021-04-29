@@ -294,7 +294,7 @@ class FrappeClient(object):
 		return self.post_process(res)
 
 	def post_api(self, method, params={}):
-		res = self.session.post(self.url + "/api/method/" + method,
+		res = self.session.post(self.url + "/api/method/" + method + "/",
 			params=params, verify=self.verify, headers=self.headers)
 		return self.post_process(res)
 
@@ -371,3 +371,4 @@ class OAuth2Session():
 	def put(self, url, data, verify):
 		res = requests.put(url, data=data, headers=self.headers, verify=verify)
 		return res
+
